@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rockbell's Automail</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link href="fullmetal.css" rel="stylesheet" type="text/css" />
+		
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			function changesel() {
+				f = document.form[0];
+				if (f.getElementById("prov").value == "prov") {
+					f.getElementById("city").length = ;
+					f.getElementById("city").option[].text = '';
+					f.getElementById("city").option[].value = '';
+				}
+				else if (f.getElementById("prov").value == 'central') {
+					f.getElementById("city").length = 2;
+					f.getElementById("city").option[1].text = "Central City";
+					f.getElementById("city").option[1].value = "1";
+				}
+				else if (f.getElementById("prov").value == "south") {
+					f.getElementById("city").length = 5;
+					f.getElementById("city").option[1].text = "South City";
+					f.getElementById("city").option[1].value = "1";
+					f.getElementById("city").option[2].text = "Rush Valley";
+					f.getElementById("city").option[2].value = "2";
+					f.getElementById("city").option[3].text = "Dublith";
+					f.getElementById("city").option[3].value = "3";
+					f.getElementById("city").option[4].text = "Fotcett";
+					f.getElementById("city").option[4].value = "4";
+				}
+				else if (f.getElementById("prov").value == 'east') {
+					f.getElementById("city").length = 7;
+					f.getElementById("city").option[1].text = "East City";
+					f.getElementById("city").option[1].value = '1';
+					f.getElementById("city").option[2].text = "Liore";
+					f.getElementById("city").option[2].value = "2";
+					f.getElementById("city").option[3].text = "New Optain";
+					f.getElementById("city").option[3].value = "3";
+					f.getElementById("city").option[4].text = "Youswell";
+					f.getElementById("city").option[4].value = "4";
+					f.getElementById("city").option[5].text = "Resembool";
+					f.getElementById("city").option[5].value = "5";
+					f.getElementById("city").option[6].text = "Cameron";
+					f.getElementById("city").option[6].value = "6";
+				}
+				else if (f.getElementById("prov").value == "west") {
+					f.getElementById("city").length = 4;
+					f.getElementById("city").option[1].text = "West City";
+					f.getElementById("city").option[1].value = "1";
+					f.getElementById("city").option[2].text = "Pendleton";
+					f.getElementById("city").option[2].value = "2";
+					f.getElementById("city").option[3].text = "Wellebley";
+					f.getElementById("city").option[3].value = "3";
+				}
+				else if (f.getElementById("prov").value == "north") {
+					f.getElementById("city").length = 3;
+					f.getElementById("city").option[1].text = "North City";
+					f.getElementById("city").option[1].value = "1";
+					f.getElementById("city").option[2].text = "Fisk";
+					f.getElementById("city").option[2].value = "2";
+				}
+	}
+
+			/* ]]> */
+		</script>
+	</head>
+	
+	<body>
+		<div id="headerImage">
+			
+		</div>
+		<div id="index">
+			<h2>
+				<a href="home.html"><img id="home" src="images/home.jpg" 
+										 onmouseover="document.getElementById(this.id).src='images/home2.jpg'"
+										 onmouseout="document.getElementById(this.id).src='images/home.jpg'"></a> 
+				<a href="career.html"><img id="career" src="images/career.jpg"
+										 onmouseover="document.getElementById(this.id).src='images/career2.jpg'"
+										 onmouseout="document.getElementById(this.id).src='images/career.jpg'"></a> 
+				<a href="automail.html"><img id="automail" src="images/gallery.jpg"
+										 onmouseover="document.getElementById(this.id).src='images/gallery2.jpg'"
+										 onmouseout="document.getElementById(this.id).src='images/gallery.jpg'"></a> 
+				<a href="book.html"><img id="book" src="images/book2.jpg"></a>
+			</h2>	
+		</div>
+		<div class="content">
+			<h2>Book</h2>
+			<form action="" method="get" name="book">
+				<table style="text-align: left">
+					<tr>
+						<td>
+							<h3>Personal Information</h3>
+							<p>
+								Name:
+								<input type="text" required="required" name="name" size="50">
+							</p>
+							<p>
+								E-mail:
+								<input type="text" required="required" name="email" size="49">
+							</p>
+							<p>
+								Phone Number:
+								(<input type = "text" name = "area" size = "3" maxlength = "3" />)
+								<input type = "text" name = "exchange" size = "4" maxlength = "4" />
+								-
+								<input type = "text" name = "phone" size = "4" maxlength = "4" />
+							</p>
+						</td>
+						<td width="700">
+							<h3>Address</h3>
+							<p>
+								Amestris
+								<select id="prov" name="address_prov" onselect="changesel()" onchange="changesel()">
+									<option value="" selected disabled>Province</option>
+									<option value="central">Central Area</option>
+									<option value="south">South Area</option>
+									<option value="east">East Area</option>
+									<option value="north">North Area</option>
+									<option value="west">West Area</option>
+								</select>
+								<select id="city" name="address_city">
+									<option value="" selected disabled>City</option>
+									<option value="1"></option>
+									<option value="2"></option>
+									<option value="3"></option>
+									<option value="4"></option>
+								</select>
+								<input type="text" name="address_left" size="10">
+							</p>
+							<p>
+								Date of the first meeting:
+								<input type="date">
+								
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h3>Type of Automail</h3>
+							<p>
+								Body part:
+								<input type="text" required="required" name="bodypart" size="40">
+							</p>
+							<p>
+								Feature you want and purpose:  <br />
+								<textarea name="feature" cols="70" rows="5">As specific as you can</textarea>
+							</p>
+							<h3>Type of installation</h3>
+							<p>
+								<input type="radio" name="install" value="travel" onclick="instal()" /> Visit your location
+								<input type="radio" name="install" value="visit" onclick="instal()" checked="checked" /> Visit store
+							</p>
+						</td>
+						<td>
+							<p>
+								<b>*Note</b>
+							</p>
+							<p>
+								<i>For customers who is not able to visit Rockbell's Automail store,</i> <br />
+								Winry will visit your location
+								twice or more. Winry will see you, have conversation about your automail, and measure the size in
+								the first visit. Then Winry will build your Automail near your location or resemble store.
+								In the second visit, Winry will install Automail to your or your pet's body.
+								However, if you are first to use Automail, so that you need body-fixed parts, you must come and
+								visit Resembool Rockbell's Automail store. <br /><br />
+								<i>For customers who want to visit Resembool,</i> <br />
+								You will visit Rockbell's Automail store in Resemble. 
+							</p>
+						</td>
+					</tr>
+				</table>
+				<p>
+					<input type="submit" value="Book" />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>
